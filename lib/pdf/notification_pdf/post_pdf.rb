@@ -1,4 +1,4 @@
-module PracticePdf
+module NotificationPdf
   class PostPdf < Prawn::Document
     def initialize
       super(page_size: 'A4') # 新規PDF作成
