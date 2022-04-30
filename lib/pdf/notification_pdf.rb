@@ -1,0 +1,2 @@
+module NotificationPdf
+end
