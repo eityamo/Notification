@@ -1,7 +1,42 @@
-<%= form_with model: @record, url: records_path, local: true do |f| %>
-  <%= f.label :myname %>
-  <%= f.text_field :myname %>
-  <%= f.label :old %>
-  <%= f.number_field :old %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <h1><%="反抗期届" %></h1>
+      <%= form_with model: @record, url: records_path, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :myname %>
+          <%= f.text_field :myname, class: 'form-control' %>         
+        </div>
+        <div class="form-group">
+          <%= f.label :old %>
+          <%= f.number_field :old, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :fromdate %>
+          <%= f.date_select :fromdate, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :todate %>
+          <%= f.date_select :todate, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :yourname %>
+          <%= f.text_field :yourname, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :getup %>
+          <%= f.select :getup, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :cleanup %>
+          <%= f.select :cleanup, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :note %>
+          <%= f.select :note, class: 'form-control' %>
+        </div>
+          <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
