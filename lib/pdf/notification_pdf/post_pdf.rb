@@ -1,6 +1,6 @@
 module NotificationPdf
   class PostPdf < Prawn::Document
-    def initialize
+    def initialize(record)
       # 新規PDF作成
       super(page_size: 'A4')
       # 座標を表示
@@ -11,7 +11,7 @@ module NotificationPdf
       create_title
       create_header
       create_contents
-      create_form
+      create_form(record)
       create_footer
     end
 
@@ -25,7 +25,7 @@ module NotificationPdf
     end
 
     def create_contents
-      text_box '名前', at: [70, 550], size: 12
+      text_box "氏名", at: [70, 550], size: 12
       text_box '期間', at: [70, 490], size: 12
       text_box '親の呼び名', at: [70, 400], size: 12
       text_box '朝起こす', at: [130, 320], size: 12
@@ -35,8 +35,8 @@ module NotificationPdf
       text_box '備考', at: [70, 150], size: 12
     end
 
-    def create_form
-      text_box 'サンプルネーム', at: [150, 550], size: 12
+    def create_form(record)
+      text_box "#{record.myname}", at: [150, 550], size: 12
       text_box '令和何年何月何日から', at: [150, 490], size: 12
       text_box '令和何年何月何日まで', at: [150, 460], size: 12
       text_box 'サンプルネーム', at: [150, 400], size: 12

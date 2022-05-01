@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-	root 'notifications#index'
+	root 'records#new'
 
-	resources :notifications, only: %i[index]
-	resources :post_pdf, only: %i[index]
+	resources :records, only: %i[new create show]
 end

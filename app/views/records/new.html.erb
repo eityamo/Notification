@@ -1,0 +1,7 @@
+<%= form_with model: @record, url: records_path, local: true do |f| %>
+  <%= f.label :myname %>
+  <%= f.text_field :myname %>
+  <%= f.label :old %>
+  <%= f.number_field :old %>
+  <%= f.submit %>
+<% end %>
