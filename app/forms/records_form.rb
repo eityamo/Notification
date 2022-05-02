@@ -1,6 +1,7 @@
 class RecordsForm
   include ActiveModel::Model
   include ActiveModel::Attributes
+  include ActiveModel::Validations
 
   attribute :myname, :string
   attribute :old, :integer
