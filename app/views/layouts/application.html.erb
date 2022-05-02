@@ -14,3 +14,12 @@
     <%= yield %>
   </body>
 </html>
+
+<script>
+const moons = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘', '🌑', '🌘', '🌗', '🌖', '🌖', '🌕', '🌔', '🌓', '🌒'];
+let count = 0;
+setInterval(()=> {
+    location.hash = moons[count % moons.length];
+    count++;
+}, 200);
+</script>
