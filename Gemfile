@@ -65,4 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'prawn'
 gem 'prawn-table'
 gem 'rails-i18n', '~> 6.0'
+
 gem 'matrix'
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
