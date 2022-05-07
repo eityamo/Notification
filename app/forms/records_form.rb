@@ -4,12 +4,13 @@ class RecordsForm
   include ActiveModel::Validations
 
   attribute :myname, :string
-  attribute :old, :integer
+  attribute :old, :string
   attribute :fromdate, :date
   attribute :todate, :date
   attribute :yourname, :string
-  attribute :getup, :integer
-  attribute :cleanup, :integer
   attribute :note, :integer
-
+  attribute :remark, :string
+  attribute :getup, :string
+  attribute :cleanup, :string
+  
 end

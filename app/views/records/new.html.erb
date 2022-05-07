@@ -2,12 +2,12 @@
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <header class="flex justify-between items-center py-4 md:py-8 mb-4">
       <!-- logo - start -->
-      <a href="/" class="inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo">
+      <a href="/" class="titile inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" aria-label="logo">
         <svg width="95" height="94" viewBox="0 0 95 94" class="w-6 h-auto text-indigo-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path d="M96 0V47L48 94H0V47L48 0H96Z" />
         </svg>
 
-        反抗期届
+        とどけ！反抗期
       </a>
       <!-- logo - end -->
 
@@ -32,11 +32,8 @@
 
       <!-- text start -->
       <div class="sm:max-w-xl flex flex-col items-center relative p-4">
-        <p class="text-indigo-200 text-lg sm:text-xl text-center mb-4 md:mb-8">
-          反抗期届を提出して
-          大人の階段を登ろう
-        </p>
-        <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 md:mb-12">反抗期届</h1>
+        <h1 class="titile text-white text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-8 md:mb-12">とどけ！反抗期</h1>
+        <p class="text-indigo-200 text-lg sm:text-xl text-center mb-4 md:mb-8">反抗期届を提出して大人の階段を登ろう</p>
 
       </div>
       <!-- text end -->
@@ -49,7 +46,7 @@
       <%#= image_tag 'clipboard_brown1.png', class:"w-full h-full object-contain object-center absolute inset-0" %>
     <!-- text - start -->
     <div class="mb-10 md:mb-16">
-      <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">反抗期届</h2>
+      <h2 class="text-gray-800 text-2xl lg:text-5xl font-bold text-center mb-4 md:mb-6">反抗期届</h2>
 
       <p class="max-w-screen-md text-gray-500 md:text-lg mx-auto">※当サービスによるトラブルについて責任を負いません。<br>※シャレの通じない相手には送らないでください。<br>※入力した個人情報は当サービス以外に使用することはありません。</p>
     </div>
@@ -58,36 +55,40 @@
     <!-- form - start -->
       <%= form_with  model: @record, url: records_path, local: true, class: "max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto" do |f| %>
       <div class="sm:col-span-2">
-        <%= f.label :myname %>
+        <%= f.label "名前" %>
         <%= f.text_field :myname, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
       </div>
       <div class="sm:col-span-2">
-        <%= f.label :old %>
-        <%= f.number_field :old, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
+        <%= f.label "年齢" %>
+        <%= f.number_field :old, in: 1..100 ,class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
+      </div>
+      <div>
+        <%= f.label "反抗期の期間　　　　" %>
+        <%= f.datetime_field :fromdate, default: DateTime.now %>
+      </div>
+      <div>
+        <%= f.label "〜　　　" %>
+        <%= f.datetime_field :todate %>
       </div>
       <div class="sm:col-span-2">
-        <%= f.label :fromdate %>
-        <%= f.date_select :fromdate, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
-      </div>
-      <div class="sm:col-span-2">
-        <%= f.label :todate %>
-        <%= f.date_select :todate, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
-      </div>
-      <div class="sm:col-span-2">
-        <%= f.label :yourname %>
+        <%= f.label "親の名前" %>
         <%= f.text_field :yourname, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
       </div>
-      <div class="sm:col-span-2">
-        <%= f.label :getup %>
-        <%= f.select :getup, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+      <div>
+        <%= f.label "朝起こすか" %>
+        <%= f.select :getup, [['要'], ['不要'], ['適宜相談']], selected: 1 %>
+      </div>
+      <div>
+        <%= f.label "部屋掃除" %>
+        <%= f.select :cleanup, [['要'], ['不要'], ['適宜相談']], selected: 1 %>
       </div>
       <div class="sm:col-span-2">
-        <%= f.label :cleanup %>
-        <%= f.select :cleanup, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+        <%= f.label "注意回数" %>
+        <%= f.number_field :note, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
       </div>
       <div class="sm:col-span-2">
-        <%= f.label :note %>
-        <%= f.select :note, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+        <%= f.label "備考" %>
+        <%= f.text_area :remark, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
       </div>
       <div class="sm:col-span-2 flex justify-between items-center">
         <%= f.submit "PDFを生成", class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
