@@ -33,8 +33,6 @@ module NotificationPdf
       text_box "親の呼び名", at: [70, 400], size: 12
       text_box "朝起こす", at: [130, 320], size: 12
       text_box "部屋掃除", at: [130, 270], size: 12
-      text_box "注意回数", at: [130, 220], size: 12
-      text_box "(この回数超えると反抗することが許容されます)", at: [130, 200], size: 12
       text_box "備考", at: [70, 150], size: 12
     end
 
@@ -47,13 +45,11 @@ module NotificationPdf
       text_box "#{record.yourname}", at: [0, 400], align: :center, size: 12
       text_box "#{record.getup}", at: [0, 320], align: :center, size: 12
       text_box "#{record.cleanup}", at: [0, 270], align: :center, size: 12
-      text_box "#{record.note}回", at: [0, 220], align: :center, size: 12
-      text_box "#{record.remark}", at: [0, 135], align: :center, size: 12
     end
 
     def create_footer
       font "app/assets/fonts/SourceHanSans-Bold.ttc"
-      text_box "※ 大人の干渉がすくなるにつれ、これまで以上に事故管理に努めること", at: [100, 70], size: 10
+      text_box "※ 大人の干渉が少なくなるにつれ、これまで以上に自己管理に努めること", at: [100, 70], size: 10
       text_box "※ 期間短縮延長可", at: [100, 60], size: 10
     end
   end

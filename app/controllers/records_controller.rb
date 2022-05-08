@@ -15,6 +15,6 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:records_form).permit(:myname, :old, :fromdate, :todate, :yourname, :getup, :cleanup, :note, :remark)
+    params.require(:records_form).permit(:myname, :old, :fromdate, :todate, :yourname, :getup, :cleanup, :remark)
   end
 end
