@@ -7,7 +7,7 @@
           <path d="M96 0V47L48 94H0V47L48 0H96Z" />
         </svg>
 
-        とどけ！反抗期
+        とどけ、反抗期
       </a>
       <!-- logo - end -->
 
@@ -32,7 +32,7 @@
 
       <!-- text start -->
       <div class="sm:max-w-xl flex flex-col items-center relative p-4">
-        <h1 class="titile text-white text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-8 md:mb-12">とどけ！反抗期</h1>
+        <h1 class="titile text-white text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-8 md:mb-12">とどけ、反抗期</h1>
         <p class="text-indigo-200 text-lg sm:text-xl text-center mb-4 md:mb-8">反抗期届を提出して大人の階段を登ろう</p>
 
       </div>
@@ -45,8 +45,8 @@
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
       <%#= image_tag 'clipboard_brown1.png', class:"w-full h-full object-contain object-center absolute inset-0" %>
     <!-- text - start -->
-    <div class="mb-10 md:mb-16">
-      <h2 class="text-gray-800 text-2xl lg:text-5xl font-bold text-center mb-4 md:mb-6">反抗期届</h2>
+    <div class="mb-10 md:mb-8">
+      <h2 class="text-gray-800 text-2xl lg:text-5xl font-bold text-center mb-4 md:mb-10">反抗期届</h2>
 
       <p class="max-w-screen-md text-gray-500 md:text-lg mx-auto">※当サービスによるトラブルについて責任を負いません。<br>※シャレの通じない相手には送らないでください。<br>※入力した個人情報は当サービス以外に使用することはありません。</p>
     </div>
@@ -56,39 +56,49 @@
       <%= form_with  model: @record, url: records_path, local: true, class: "max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto" do |f| %>
       <div class="sm:col-span-2">
         <%= f.label "名前" %>
-        <%= f.text_field :myname, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+        <%= f.text_field :myname, required: true, maxlength: "20", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
       </div>
       <div class="sm:col-span-2">
         <%= f.label "年齢" %>
-        <%= f.number_field :old, in: 1..100 ,class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
+        <%= f.number_field :old, in: 1..100, required: true ,class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
-      <div>
-        <%= f.label "反抗期の期間　　　　" %>
-        <%= f.datetime_field :fromdate, default: DateTime.now %>
-      </div>
-      <div>
-        <%= f.label "〜　　　" %>
-        <%= f.datetime_field :todate %>
+
+      <div date-rangepicker class="sm:col-span-2">
+        <%= f.label "反抗期間" %>
+        <div class="relative">
+            <%= f.datetime_field :fromdate, required: true, class:"bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
+        <span class="mx-4 text-gray-500">to</span>
+        <div class="relative">
+          <%= f.datetime_field :todate, required: true, class:"bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
       </div>
       <div class="sm:col-span-2">
-        <%= f.label "親の名前" %>
-        <%= f.text_field :yourname, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+        <%= f.label "親の呼び名" %>
+        <%= f.text_field :yourname, required: true, maxlength: "10", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
       </div>
-      <div>
+
+      <div class="inline-block relative w-64">
         <%= f.label "朝起こすか" %>
-        <%= f.select :getup, [['要'], ['不要'], ['適宜相談']], selected: 1 %>
+        <div class="relative">
+          <%= f.select :getup, ['要', '不要', '適宜相談'],  { selected: '要' }, class:"bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
       </div>
-      <div>
+
+      <div class="inline-block relative w-64">
         <%= f.label "部屋掃除" %>
-        <%= f.select :cleanup, [['要'], ['不要'], ['適宜相談']], selected: 1 %>
+        <div class="relative">
+          <%= f.select :cleanup, ['要', '不要', '適宜相談'],  { selected: '要' }, class:"bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        </div>
       </div>
+
       <div class="sm:col-span-2">
         <%= f.label "注意回数" %>
-        <%= f.number_field :note, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" %>
+        <%= f.number_field :note, in: 0..10, required: true, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
       <div class="sm:col-span-2">
         <%= f.label "備考" %>
-        <%= f.text_area :remark, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"  %>
+        <%= f.text_area :remark, maxlength: "50", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full duration-100 px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
       </div>
       <div class="sm:col-span-2 flex justify-between items-center">
         <%= f.submit "PDFを生成", class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>

@@ -5,8 +5,8 @@ class RecordsForm
 
   attribute :myname, :string
   attribute :old, :string
-  attribute :fromdate, :date
-  attribute :todate, :date
+  attribute :fromdate, :date, default: -> { Time.now }
+  attribute :todate, :date, default: -> { Time.now.since(1.day) }
   attribute :yourname, :string
   attribute :note, :integer
   attribute :remark, :string
