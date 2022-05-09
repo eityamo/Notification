@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	root 'records#new'
 
-	resources :records, only: %i[new create]
+	get '/records', to: 'records#new'
+	resources :records, only: %i[create]
 end

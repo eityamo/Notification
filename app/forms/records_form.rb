@@ -17,6 +17,11 @@ class RecordsForm
   validates :remark, { length: { maximum: 50 } }
   validate :start_end_check
 
+  # def save
+  #  return false if invalid?
+
+  # end
+
   def start_end_check
     errors.add(:todate, "は開始日より前の日付は登録できません。") unless self.fromdate < self.todate
   end
