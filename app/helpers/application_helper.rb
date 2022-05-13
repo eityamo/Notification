@@ -7,7 +7,7 @@ module ApplicationHelper
   
   def full_url(path)
     domain = if Rails.env.development?
-                     'http://0.0.0.0:3000'
+                     'http://0.0.0.0:3000/'
                    else
                      'https://hankouki.herokuapp.com/'
                    end
