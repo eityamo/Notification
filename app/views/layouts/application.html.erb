@@ -6,8 +6,8 @@
     <meta name="twitter:site" content="@McBattleChannel" />
     <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
     <meta property="og:url" content="<%= request.url %>" />
-    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : '反抗期を宣言する届出(反抗期届)をPDFで作成してくれるアプリ' %>" />
-    <meta property="og:image" content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/images/top.png') %>" />
+    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description)  %>" />
+    <meta property="og:image" content="<%= content_for?(:image_url) ? yield(:image_url) %>" />
 
     <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
