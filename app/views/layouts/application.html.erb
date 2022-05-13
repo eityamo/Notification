@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= page_title(yield(:title)) %></title>
+    <!-- ogp -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@McBattleChannel" />
+    <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : 'MCバトルの総合サイトです。' %>" />
+    <meta property="og:image" content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/images/top.png') %>" />
+
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
