@@ -72,3 +72,6 @@ gem 'matrix'
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+
+# ogp設定とseo対策
+gem 'meta-tags'
