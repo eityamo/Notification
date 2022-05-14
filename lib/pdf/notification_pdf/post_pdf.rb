@@ -4,7 +4,7 @@ module NotificationPdf
       # 新規PDF作成
       super(page_size: "A4")
       # 座標を表示
-      stroke_axis
+      # stroke_axis
 
       create_title
       create_header
