@@ -8,7 +8,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: '反抗期届',
-      title: 'とどけ、反抗期',
+      title: '届け、反抗期',
       reverse: true,
       separator: '|',
       description: '反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ',
@@ -21,7 +21,7 @@ module ApplicationHelper
       ],
       og: {
         site_name: '反抗期届',
-        title: 'とどけ、反抗期',
+        title: '届け、反抗期',
         description: '反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ', 
         type: 'website',
         url: request.original_url,
