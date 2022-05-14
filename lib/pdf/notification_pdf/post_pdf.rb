@@ -4,7 +4,7 @@ module NotificationPdf
       # 新規PDF作成
       super(page_size: "A4")
       # 座標を表示
-      # stroke_axis
+      stroke_axis
 
       create_title
       create_header
@@ -45,6 +45,9 @@ module NotificationPdf
       text_box "#{record.yourname}", at: [0, 400], align: :center, size: 12
       text_box "#{record.getup}", at: [0, 320], align: :center, size: 12
       text_box "#{record.cleanup}", at: [0, 270], align: :center, size: 12
+      bounding_box([115, 148], width: 312, height: 60) do
+        text_box "#{record.remark}", size: 12
+      end
     end
 
     def create_footer

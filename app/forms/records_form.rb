@@ -14,7 +14,7 @@ class RecordsForm
 
   validates :myname, { length: { maximum: 20 } }
   validates :yourname, { length: { maximum: 20 } }
-  validates :remark, { length: { maximum: 50 } }
+  validates :remark, { length: { maximum: 131 } }
   validate :start_end_check
 
   # def save
