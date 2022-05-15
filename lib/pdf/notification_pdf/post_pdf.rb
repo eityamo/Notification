@@ -31,12 +31,13 @@ module NotificationPdf
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
         text_box "氏名", at: [70, 550]
         text_box "印", at: [350, 550]
+        text_box "(     歳)", at: [385, 550]
         text_box "期間", at: [70, 490]
         text_box "から", at: [350, 490]
         text_box "まで", at: [350, 460]
         text_box "親の呼び名", at: [70, 400]
-        text_box "朝起こす", at: [130, 320]
-        text_box "部屋掃除", at: [130, 270]
+        text_box "朝起こす", at: [70, 320]
+        text_box "部屋掃除", at: [70, 270]
         text_box "備考", at: [70, 150]
       end
     end
@@ -44,12 +45,26 @@ module NotificationPdf
     def create_form(record)
       font "app/assets/fonts/SourceHanSans-Light.ttc" do
       text_box "#{record.myname}", at: [0, 550], align: :center
-        text_box "(#{record.old}歳)", at: [400, 550]
+        text_box "#{record.old}", at: [390, 550]
         text_box "#{I18n.l(record.fromdate, format: :long)}", at: [200, 490]
         text_box "#{I18n.l(record.todate, format: :long)}", at: [200, 460]
         text_box "#{record.yourname}", at: [0, 400], align: :center
-        text_box "#{record.getup}", at: [0, 320], align: :center
-        text_box "#{record.cleanup}", at: [0, 270], align: :center
+        text_box "要　　不要　　適宜確認", at: [0, 320], align: :center
+        if record.getup == '要'
+          stroke_circle [201, 313], 10
+        elsif record.getup == '不要'
+          stroke_ellipse [244, 313], 18, 10
+        elsif record.getup == '適宜相談'
+          stroke_ellipse [303, 313], 30, 10
+        end
+        text_box "要　　不要　　適宜確認", at: [0, 270], align: :center
+        if record.cleanup == '要'
+          stroke_circle [201, 263], 10
+        elsif record.cleanup == '不要'
+          stroke_ellipse [244, 263], 18, 10
+        elsif record.cleanup == '適宜相談'
+          stroke_ellipse [303, 263], 30, 10
+        end
         bounding_box([115, 148], width: 312, height: 60) do
           text_box "#{record.remark}"
         end
@@ -58,29 +73,29 @@ module NotificationPdf
 
     def create_stamps(record)
       create_stamp('approved') do
-        font('app/assets/fonts/SourceHanSans-Bold.ttc') do
+        font('app/assets/fonts/YujiSyuku-Regular.ttf') do
           if record.stamp.length == 1
             stroke_color 'ce3337'
             fill_color 'ce3337'
             stroke_circle [16, 16], 13
             bounding_box([3, 29], width: 26, height: 26) do
-              text_box "#{record.stamp}", at: [5, 21], size: 16
+              text_box "#{record.stamp}", at: [4, 23], size: 18
             end
           elsif record.stamp.length == 2
             stroke_color 'ce3337'
             fill_color 'ce3337'
             stroke_circle [16, 16], 16
             bounding_box([8, 32], width: 16, height: 32) do
-              text_box "#{record.stamp}", at: [0, 31], size: 15
+              text_box "#{record.stamp}", at: [0, 32], size: 16
             end
           elsif record.stamp.length == 3
             stroke_color 'ce3337'
             fill_color 'ce3337'
             stroke_ellipse [12, 14], 12, 20
             bounding_box([6, 31], width: 12, height: 36) do
-              text_box "#{record.stamp}", at: [0, 38], size: 12
+              text_box "#{record.stamp}", at: [0, 37], size: 12
             end
-          else
+          elsif record.stamp.length == 4
             image 'app/assets/images/fingerprint.jpg', at: [10, 30], width: 20, height: 30
           end
         end

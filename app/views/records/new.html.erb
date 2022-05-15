@@ -44,7 +44,7 @@
 
       <div class="inline-block relative w-48">
         <%= f.label :old %>
-        <%= f.number_field :old, in: 1..100, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+        <%= f.number_field :old, in: 1..99, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
 
       <div date-rangepicker, class="sm:col-span-2 flex flex-col">
@@ -63,12 +63,12 @@
 
       <div class="inline-block relative w-48">
         <%= f.label :getup %>
-          <%= f.select :getup, ['適宜相談', '要', '不要'],  { selected: '適宜相談' }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          <%= f.select :getup, ['要', '不要', '適宜相談'],  { include_blank: true }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
 
       <div class="inline-block relative w-48">
         <%= f.label :cleanup %>
-          <%= f.select :cleanup, ['適宜相談', '要', '不要'],  { selected: '適宜相談' }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+          <%= f.select :cleanup, ['要', '不要', '適宜相談'],  { include_blank: true }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
 
       <div class="sm:col-span-2">
