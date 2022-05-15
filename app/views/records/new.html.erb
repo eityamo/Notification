@@ -34,9 +34,15 @@
       <%= render 'shared/error_messages', object: f.object %>
       <div class="sm:col-span-2">
         <%= f.label :myname %>
-        <%= f.text_field :myname, placeholder: "20字以内", maxlength: "20", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
+        <%= f.text_field :myname, placeholder: "10字以内", maxlength: "10", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
       </div>
-      <div class="sm:col-span-2">
+
+      <div class="inline-block relative w-48">
+        <%= f.label :stamp %>
+        <%= f.text_field :stamp, placeholder: "4字以内", maxlength: "4", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
+      </div>
+
+      <div class="inline-block relative w-48">
         <%= f.label :old %>
         <%= f.number_field :old, in: 1..100, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
       </div>
@@ -52,21 +58,17 @@
       
       <div class="sm:col-span-2">
         <%= f.label :yourname%>
-        <%= f.text_field :yourname, placeholder: "20字以内", maxlength: "10", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
+        <%= f.text_field :yourname, placeholder: "10字以内", maxlength: "10", class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  %>
       </div>
 
       <div class="inline-block relative w-48">
         <%= f.label :getup %>
-        <div class="relative">
           <%= f.select :getup, ['適宜相談', '要', '不要'],  { selected: '適宜相談' }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-        </div>
       </div>
 
       <div class="inline-block relative w-48">
         <%= f.label :cleanup %>
-        <div class="relative">
           <%= f.select :cleanup, ['適宜相談', '要', '不要'],  { selected: '適宜相談' }, class:"text-center bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-        </div>
       </div>
 
       <div class="sm:col-span-2">
