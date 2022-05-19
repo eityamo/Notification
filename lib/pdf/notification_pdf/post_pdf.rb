@@ -31,7 +31,7 @@ module NotificationPdf
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
         text_box "氏名", at: [70, 550]
         text_box "印", at: [350, 550]
-        text_box "(     歳)", at: [385, 550]
+        text_box "歳", at: [405, 550]
         text_box "期間", at: [70, 490]
         text_box "から", at: [350, 490]
         text_box "まで", at: [350, 460]
@@ -49,20 +49,20 @@ module NotificationPdf
         text_box "#{I18n.l(record.fromdate, format: :long)}", at: [200, 490]
         text_box "#{I18n.l(record.todate, format: :long)}", at: [200, 460]
         text_box "#{record.yourname}", at: [0, 400], align: :center
-        text_box "要　　不要　　適宜確認", at: [0, 320], align: :center
+        text_box "要　　不要　　都度相談", at: [0, 320], align: :center
         if record.getup == '要'
           stroke_circle [201, 313], 10
         elsif record.getup == '不要'
           stroke_ellipse [244, 313], 18, 10
-        elsif record.getup == '適宜相談'
+        elsif record.getup == '都度相談'
           stroke_ellipse [303, 313], 30, 10
         end
-        text_box "要　　不要　　適宜確認", at: [0, 270], align: :center
+        text_box "要　　不要　　都度相談", at: [0, 270], align: :center
         if record.cleanup == '要'
           stroke_circle [201, 263], 10
         elsif record.cleanup == '不要'
           stroke_ellipse [244, 263], 18, 10
-        elsif record.cleanup == '適宜相談'
+        elsif record.cleanup == '都度相談'
           stroke_ellipse [303, 263], 30, 10
         end
         bounding_box([115, 148], width: 312, height: 60) do
