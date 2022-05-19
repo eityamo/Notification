@@ -16,6 +16,10 @@ class RecordsController < ApplicationController
     end
   end
 
+  def terms; end
+
+  def privacy_policy; end
+
   private
 
   def record_params
