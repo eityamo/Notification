@@ -13,15 +13,15 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-window.addEventListener('load', (event) => {
-    document.getElementById('scroll-down').addEventListener('click', () => {
-    // formの表示位置を取得
-	    var form = document.getElementById('form');
-    // formまでスクロール
-        form.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-            inline: "start"
-        });
-    });
-});
+// window.addEventListener('load', (event) => {
+//     document.getElementById('scroll-down').addEventListener('click', () => {
+//     // formの表示位置を取得
+// 	    var form = document.getElementById('form');
+//     // formまでスクロール
+//         form.scrollIntoView({
+//             behavior: "smooth",
+//             block: "start",
+//             inline: "start"
+//         });
+//     });
+// });
