@@ -16,8 +16,8 @@ module ApplicationHelper
       canonical: request.original_url,
       noindex: ! Rails.env.production?,
       icon: [
-        { href: image_url('ogp5.png') },
-        { href: image_url('ogp5.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
+        { href: image_url('favicon.png') },
+        { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
       ],
       og: {
         site_name: '反抗期届',
@@ -25,7 +25,7 @@ module ApplicationHelper
         description: '反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ', 
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp5.png'),
+        image: image_url('ogp.png'),
         locale: 'ja_JP',
       },
       twitter: {
