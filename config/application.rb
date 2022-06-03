@@ -26,7 +26,13 @@ module Rename
     # config.eager_load_paths << Rails.root.join("extras")
     config.eager_load_paths += %W(#{Rails.root}/lib/pdf)
 
-    config.i18n.default_locale = :ja
+    # 言語ファイルのパス
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
+    # 使用する言語ファイル
+    config.i18n.available_locales = %i[ja en]
+    # 言語ファイルがない場合はエラーを出すか
+    config.i18n.enforce_available_locales = true
+    # デフォルトの言語
+    config.i18n.default_locale = :ja
   end
 end
