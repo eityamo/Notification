@@ -2,17 +2,14 @@
   <!-- logo - start -->
   <%= link_to root_path, class: "titile inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5" do %>
     <%= image_tag 'title.png', class: 'h-10 w-10 cursor-pointer mx-2' %>
-    届け、反抗期
+    <%= t 'records.new.title' %>
   <% end %>
 
   <!-- logo - end -->
 
-  <!-- nav - start 
+  <!-- nav - start -->
   <nav class="hidden lg:flex gap-12">
-    <a href="#" class="text-indigo-500 text-lg font-semibold">Home</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Features</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">Pricing</a>
-    <a href="#" class="text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100">About</a>
-  </nav>
-   nav - end -->
+    <%= link_to t('defaults.english'), "/en/records", class: "text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100" %> 
+    <%= link_to t('defaults.japanese'), "/ja/records", class: "text-gray-600 hover:text-indigo-500 active:text-indigo-700 text-lg font-semibold transition duration-100" %>
+   <!-- nav - end -->
 </header>

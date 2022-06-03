@@ -1,0 +1,13 @@
+en:
+  activemodel:
+    attributes:
+      records_form:
+        myname: Name
+        stamp: Japanese Stamp
+        old: Age
+        fromdate: Period
+        todate:
+        yourname: Parent's Name
+        remark: remarks
+        getup: Wake Up
+        cleanup: Room Cleaning
