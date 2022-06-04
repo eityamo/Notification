@@ -1,0 +1,30 @@
+ja:
+  defaults: ##共通で使える
+    title: "反抗期届"
+    english: "English"
+    japanese: "Japanese"
+    footer: "© 2022 反抗期届"
+    terms: "利用規約"
+    privacy: "プライバシーポリシー"
+    twitter: "開発者Twitter"
+  records:
+    new:
+      title: "届け、反抗期"
+      subtitle: "こどもを見守るあなたに。"
+      arrow_down: "入力フォームはこちら"
+      form_title: "反抗期届"
+      form_header1: "※当サービスによるトラブルについて責任を負いません。"
+      form_header2: "※シャレの通じない相手には送らないでください。"
+      form_header3: "※入力した個人情報は当サービス以外に使用することはありません。"
+      name_placeholder: "10字以内"
+      stamp_placeholder: "4字以内"
+      remarks_placeholder: "130字以内"
+      necessary: "要"
+      unnecessary: "不要"
+      consultation: "都度相談"
+      pdf: PDF生成
+      create_header: "私は下記の期間、反抗的な態度を取ることを届け出ます"
+      from: "から"
+      to: "まで"
+      create_footer1: "※ 大人の干渉が少なくなるにつれ、これまで以上に自己管理に努めること"
+      create_footer2: "※ 期間短縮延長可"
