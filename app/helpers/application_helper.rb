@@ -12,7 +12,7 @@ module ApplicationHelper
       reverse: true,
       separator: '|',
       description: I18n.t('defaults.description'),
-      keywords: '反抗期',
+      keywords: '反抗期' '反抗期届' 'ソフト' 'PDF' '届け、反抗期', 
       canonical: request.original_url,
       noindex: ! Rails.env.production?,
       icon: [

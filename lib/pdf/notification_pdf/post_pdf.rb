@@ -4,7 +4,7 @@ module NotificationPdf
       # 新規PDF作成
       super(page_size: "A4")
       # 座標を表示
-      # stroke_axis
+       stroke_axis
 
       create_title
       create_header
@@ -80,28 +80,31 @@ module NotificationPdf
     def create_stamps(record)
       create_stamp('approved') do
         font('app/assets/fonts/YujiSyuku-Regular.ttf') do
+          stroke_color 'ce3337'
+          fill_color 'ce3337'
           if record.stamp.length == 1
-            stroke_color 'ce3337'
-            fill_color 'ce3337'
             stroke_circle [16, 16], 13
             bounding_box([3, 29], width: 26, height: 26) do
               text_box "#{record.stamp}", at: [4, 23], size: 18
             end
           elsif record.stamp.length == 2
-            stroke_color 'ce3337'
-            fill_color 'ce3337'
             stroke_circle [16, 16], 16
             bounding_box([8, 32], width: 16, height: 32) do
               text_box "#{record.stamp}", at: [0, 32], size: 16
             end
           elsif record.stamp.length == 3
-            stroke_color 'ce3337'
-            fill_color 'ce3337'
             stroke_ellipse [12, 14], 12, 20
             bounding_box([6, 31], width: 12, height: 36) do
               text_box "#{record.stamp}", at: [0, 37], size: 12
             end
           elsif record.stamp.length == 4
+            stroke do
+              rounded_rectangle [2, 45], 30, 30, 3
+            end
+            bounding_box([4, 35], width: 30, height: 30) do
+              text_box "#{record.stamp}", at: [1, 37], size: 13
+            end
+          else
             image 'app/assets/images/fingerprint.jpg', at: [10, 30], width: 20, height: 30
           end
         end
