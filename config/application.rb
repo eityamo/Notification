@@ -29,7 +29,7 @@ module Rename
     # 言語ファイルのパス
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     # 使用する言語ファイル
-    config.i18n.available_locales = %i[ja en]
+    config.i18n.available_locales = %i(ja en)
     # 言語ファイルがない場合はエラーを出すか
     config.i18n.enforce_available_locales = true
     # デフォルトの言語
