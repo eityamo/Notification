@@ -1,8 +1,8 @@
 en:
   defaults: ##共通で使える
-    site: "反抗期届"
-    title: "届け、反抗期"
-    description: "反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ"
+    site: "REBELLION NOTICE"
+    title: "LITTLE REBELLION"
+    description: "An application that creates a PDF notification for declaring a rebellion period"
     english: "English"
     title: "REBELLION NOTICE"
     japanese: "Japanese"
