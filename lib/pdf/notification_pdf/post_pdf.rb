@@ -16,7 +16,7 @@ module NotificationPdf
 
     def create_title
       font "app/assets/fonts/SourceHanSans-Heavy.ttc" do
-        text_box I18n.t('defaults.title'), at: [0, 700], align: :center, size: 40
+        text_box I18n.t('defaults.site'), at: [0, 700], align: :center, size: 40
       end
     end
 

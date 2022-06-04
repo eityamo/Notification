@@ -1,17 +1,17 @@
 module ApplicationHelper
   def full_title(page_title = '')
-    base_title = 'とどけ、反抗期'
+    base_title = I18n.t('defaults.title')
 
     page_title.empty? ? base_title : page_title + " | " + base_title
   end
 
   def default_meta_tags
     {
-      site: '反抗期届',
-      title: '届け、反抗期',
+      site: I18n.t('defaults.site'),
+      title: I18n.t('defaults.title'),
       reverse: true,
       separator: '|',
-      description: '反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ',
+      description: I18n.t('defaults.description'),
       keywords: '反抗期',
       canonical: request.original_url,
       noindex: ! Rails.env.production?,
@@ -20,9 +20,9 @@ module ApplicationHelper
         { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
       ],
       og: {
-        site_name: '反抗期届',
-        title: '届け、反抗期',
-        description: '反抗期を宣言する届出(反抗期届)をPDFで作成するアプリ', 
+        site_name: I18n.t('defaults.site'),
+        title: I18n.t('defaults.title'),
+        description: I18n.t('defaults.description'), 
         type: 'website',
         url: request.original_url,
         image: image_url('ogp.png'),
