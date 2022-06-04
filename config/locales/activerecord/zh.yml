@@ -3,11 +3,11 @@ zh:
     attributes: ##カラム
       records_form:
         myname: 姓名
-        stamp: 印章名称
+        stamp: 签字盖章
         old: 年龄
-        fromdate: 叛乱时期
+        fromdate: 獨立時間
         todate: 结束日期
         yourname: 父母的名字
-        remark: 评论
-        getup: 早上醒来
-        cleanup: 房间清洁
+        remark: 其他意見
+        getup: 早上叫我起床
+        cleanup: 叫我打掃房間
