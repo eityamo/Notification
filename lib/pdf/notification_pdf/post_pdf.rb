@@ -31,7 +31,7 @@ module NotificationPdf
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
         text_box I18n.t('activemodel.attributes.records_form.myname'), at: [70, 550]
         text_box "印", at: [350, 550]
-        text_box "(      )", at: [385, 550]
+        text_box "(      )" + I18n.t('records.new.age'), at: [385, 550]
         text_box I18n.t('activemodel.attributes.records_form.fromdate'), at: [70, 490]
         text_box I18n.t('records.new.from'), at: [350, 490]
         text_box I18n.t('records.new.to'), at: [350, 460]
