@@ -1,0 +1,13 @@
+zh:
+  activemodel: ##モデルを開始する前に記述
+    attributes: ##カラム
+      records_form:
+        myname: 姓名
+        stamp: 印章名称
+        old: 年龄
+        fromdate: 叛乱时期
+        todate: 结束日期
+        yourname: 父母的名字
+        remark: 评论
+        getup: 早上醒来
+        cleanup: 房间清洁

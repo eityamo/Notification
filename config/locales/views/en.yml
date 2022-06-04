@@ -4,11 +4,13 @@ en:
     title: "LITTLE REBELLION"
     description: "An application that creates a PDF notification for declaring a rebellion period"
     english: "English"
+    chinese: "Chinese"
     japanese: "Japanese"
     footer: "© 2022 REBELLION NOTICE"
     terms: "Terms and condition"
     privacy: "Privacy"
     twitter: "Developer Twitter"
+    facebook: "Developer Facebook"
   records:
     new:
       title: "LITTLE REBELLION"
