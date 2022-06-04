@@ -16,54 +16,60 @@ module NotificationPdf
 
     def create_title
       font "app/assets/fonts/SourceHanSans-Heavy.ttc" do
-        text_box "反抗期届", at: [0, 700], align: :center, size: 40
+        text_box I18n.t('defaults.title'), at: [0, 700], align: :center, size: 40
       end
     end
 
     def create_header
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
         text_box I18n.l(Date.current, format: :long), at: [350, 640]
-        text_box "私は下記の期間、反抗的な態度を取ることを届け出ます", at: [100, 620]
+        text_box I18n.t('records.new.create_header'), at: [100, 620]
       end
     end
 
     def create_contents
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
-        text_box "氏名", at: [70, 550]
+        text_box I18n.t('activemodel.attributes.records_form.myname'), at: [70, 550]
         text_box "印", at: [350, 550]
-        text_box "歳", at: [405, 550]
-        text_box "期間", at: [70, 490]
-        text_box "から", at: [350, 490]
-        text_box "まで", at: [350, 460]
-        text_box "親の呼び名", at: [70, 400]
-        text_box "朝起こす", at: [70, 320]
-        text_box "部屋掃除", at: [70, 270]
-        text_box "備考", at: [70, 150]
+        text_box "(      )", at: [385, 550]
+        text_box I18n.t('activemodel.attributes.records_form.fromdate'), at: [70, 490]
+        text_box I18n.t('records.new.from'), at: [350, 490]
+        text_box I18n.t('records.new.to'), at: [350, 460]
+        text_box I18n.t('activemodel.attributes.records_form.yourname'), at: [70, 400]
+        text_box I18n.t('activemodel.attributes.records_form.getup'), at: [70, 320]
+        text_box I18n.t('activemodel.attributes.records_form.cleanup'), at: [70, 270]
+        text_box I18n.t('activemodel.attributes.records_form.remark'), at: [70, 160]
+        font "app/assets/fonts/SourceHanSans-Light.ttc" do
+          text_box I18n.t('records.new.necessary'), at: [190, 320], width: 54, align: :center
+          text_box I18n.t('records.new.unnecessary'), at: [260, 320], width: 68, align: :center
+          text_box I18n.t('records.new.consultation'), at: [345, 320], width: 69, align: :center
+          text_box I18n.t('records.new.necessary'), at: [190, 270], width: 54, align: :center
+          text_box I18n.t('records.new.unnecessary'), at: [260, 270], width: 68, align: :center
+          text_box I18n.t('records.new.consultation'), at: [345, 270], width: 69, align: :center
+        end
       end
     end
 
     def create_form(record)
       font "app/assets/fonts/SourceHanSans-Light.ttc" do
       text_box "#{record.myname}", at: [0, 550], align: :center
-        text_box "#{record.old}", at: [390, 550]
+        text_box "#{record.old}", at: [391, 550]
         text_box "#{I18n.l(record.fromdate, format: :long)}", at: [200, 490]
         text_box "#{I18n.l(record.todate, format: :long)}", at: [200, 460]
         text_box "#{record.yourname}", at: [0, 400], align: :center
-        text_box "要　　不要　　都度相談", at: [0, 320], align: :center
-        if record.getup == '要'
-          stroke_circle [201, 313], 10
-        elsif record.getup == '不要'
-          stroke_ellipse [244, 313], 18, 10
-        elsif record.getup == '都度相談'
-          stroke_ellipse [303, 313], 30, 10
+        if record.getup == I18n.t('records.new.necessary')
+          stroke_circle [217, 313], 10
+        elsif record.getup == I18n.t('records.new.unnecessary')
+          stroke_ellipse [294, 313], 10
+        elsif record.getup == I18n.t('records.new.consultation')
+          stroke_ellipse [380, 313], 10
         end
-        text_box "要　　不要　　都度相談", at: [0, 270], align: :center
-        if record.cleanup == '要'
-          stroke_circle [201, 263], 10
-        elsif record.cleanup == '不要'
-          stroke_ellipse [244, 263], 18, 10
-        elsif record.cleanup == '都度相談'
-          stroke_ellipse [303, 263], 30, 10
+        if record.cleanup == I18n.t('records.new.necessary')
+          stroke_circle [217, 263], 10
+        elsif record.cleanup == I18n.t('records.new.unnecessary')
+          stroke_ellipse [294, 263], 10
+        elsif record.cleanup == I18n.t('records.new.consultation')
+          stroke_ellipse [380, 263], 10
         end
         bounding_box([115, 148], width: 312, height: 60) do
           text_box "#{record.remark}"
@@ -105,8 +111,8 @@ module NotificationPdf
 
     def create_footer
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
-      text_box "※ 大人の干渉が少なくなるにつれ、これまで以上に自己管理に努めること", at: [100, 70], size: 10
-      text_box "※ 期間短縮延長可", at: [100, 60], size: 10
+      text_box I18n.t('records.new.create_footer1'), at: [70, 70], size: 10
+      text_box I18n.t('records.new.create_footer2'), at: [70, 60], size: 10
       end
     end
   end
