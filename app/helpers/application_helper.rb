@@ -16,8 +16,8 @@ module ApplicationHelper
       canonical: request.original_url,
       noindex: ! Rails.env.production?,
       icon: [
-        { href: image_url('favicon.png') },
-        { href: image_url('favicon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
+        { href: image_url('children_crossing.png') },
+        { href: image_url('children_crossing.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
       ],
       og: {
         site_name: I18n.t('defaults.site'),
