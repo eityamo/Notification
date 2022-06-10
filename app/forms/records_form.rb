@@ -2,6 +2,9 @@ class RecordsForm
   include ActiveModel::Model
   include ActiveModel::Attributes
   include ActiveModel::Validations
+  include ActiveModel::Validations::Callbacks
+
+  after_validation :vertical_stamp
 
   attribute :myname, :string
   attribute :stamp, :string
@@ -19,12 +22,18 @@ class RecordsForm
   validates :remark, { length: { maximum: 131 } }
   validate :start_end_check
 
-  # def save
-  #  return false if invalid?
-
-  # end
-
   def start_end_check
     errors.add(:todate, "は開始日より前の日付は登録できません。") unless self.fromdate < self.todate
+  end
+
+  private
+
+  def vertical_stamp
+    self.stamp = vertical(self.stamp) if self.stamp.length == 4
+  end
+
+  def vertical(stamp)
+    part = stamp.split('')
+    part[2]+part[0]+part[3]+part[1]
   end
 end
