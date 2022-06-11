@@ -23,7 +23,7 @@ module NotificationPdf
     def create_header
       font "app/assets/fonts/SourceHanSans-Bold.ttc" do
         text_box I18n.l(Date.current, format: :long), at: [350, 640]
-        text_box I18n.t('records.new.create_header'), at: [100, 620]
+        text_box I18n.t('records.new.create_header'), at: [75, 620]
       end
     end
 

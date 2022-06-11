@@ -3,11 +3,11 @@ en:
     attributes:
       records_form:
         myname: Name
-        stamp: Japanese Stamp
+        stamp: Initial
         old: Age
-        fromdate: Period
+        fromdate: Period of Rebellion
         todate:
         yourname: Parent's Name
-        remark: remarks
+        remark: Remarks
         getup: Wake Up
         cleanup: Room Cleaning
