@@ -12,7 +12,18 @@ module ApplicationHelper
       reverse: true,
       separator: '|',
       description: I18n.t('defaults.description'),
-      keywords: '反抗期' '反抗期届' 'ソフト' 'PDF' '届け、反抗期' 'REBELLION NOTICE' 'LITTLE REBELLION' 'notification' 'a rebellion period' '叛乱通知', 
+      keywords: [
+        '反抗期',
+        '反抗期届',
+        'ソフト',
+        'PDF',
+        '届け、反抗期',
+        'REBELLION NOTICE',
+        'LITTLE REBELLION',
+        'notification',
+        'a rebellion period',
+        '叛乱通知'
+      ], 
       canonical: request.original_url,
       noindex: ! Rails.env.production?,
       icon: [
