@@ -9,12 +9,9 @@ module ApplicationHelper
     {
       site: I18n.t('defaults.site'),
       title: I18n.t('defaults.title'),
-      reverse: true,
-      separator: '|',
       description: I18n.t('defaults.description'),
       keywords: '反抗期 PDF, 反抗期 反抗期届, 反抗期 ソフト, 反抗期 届け、反抗期, REBELLION NOTICE, LITTLE REBELLION, notification, a rebellion period, 叛乱通知',
-      canonical: request.original_url,
-      noindex: ! Rails.env.production?,
+      charset: 'UTF-8',
       icon: [
         { href: image_url('children_crossing.png') },
         { href: image_url('children_crossing.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'img/png' },
