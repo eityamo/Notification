@@ -22,6 +22,7 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: clbn7in3q001ybequb33r979b
+  username: clbn7in3n001wbequhit52gcb
+  password: <%= ENV['HANKOUKI_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
